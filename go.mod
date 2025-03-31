@@ -4,7 +4,7 @@ go 1.23.7
 
 require (
 	github.com/stretchr/testify v1.10.0
-	gitlab.lrz.de/hm/goal-core v1.0.4
+	gitlab.lrz.de/hm/goal-core v1.0.6
 )
 
 require (
