@@ -50,7 +50,8 @@ func TestErrorOnCycle(t *testing.T) {
 
 func assertValidOrdering(g *hmgraph.Graph, sorting []*hmgraph.Vertex, t *testing.T) {
 	numbering := hmgraph.CreateVertexMap(g, "testNumber", -1)
-	for _, vertex := range sorting {
+	for i, vertex := range sorting {
+		numbering.Set(vertex, i)
 		vertex.ForOutArcs(func(arc *hmgraph.Arc) {
 			assert.True(t, numbering.Get(arc.Target()) == -1)
 		})
